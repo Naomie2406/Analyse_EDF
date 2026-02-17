@@ -1,4 +1,4 @@
-# 👷 Bilan Social EDF - Dashboard RH (Qlik Sense)
+# 👷 Bilan Social EDF SA- Dashboard RH (Qlik Sense)
 
 ![Qlik Sense](https://img.shields.io/badge/Qlik%20Sense-009845?style=for-the-badge&logo=qlik&logoColor=white)
 ![EDF](https://img.shields.io/badge/EDF-Open%20Data-f60?style=for-the-badge)
