@@ -1,4 +1,4 @@
-# 👷 Bilan Social EDF — Dashboard RH (Qlik Sense)
+# 👷 Bilan Social EDF - Dashboard RH (Qlik Sense)
 
 ![Qlik Sense](https://img.shields.io/badge/Qlik%20Sense-009845?style=for-the-badge&logo=qlik&logoColor=white)
 ![EDF](https://img.shields.io/badge/EDF-Open%20Data-f60?style=for-the-badge)
@@ -9,7 +9,7 @@
 
 ## 📋 Project Overview
 
-This project is an **HR data visualization dashboard** built with **Qlik Sense**, analyzing the **EDF SA Social Report (Bilan Social)** from 2017 to 2023. It explores workforce composition, gender distribution, age structure, and the inclusion of employees with disabilities — all based on **public open data** from EDF.
+This project is an **HR data visualization dashboard** built with **Qlik Sense**, analyzing the **EDF SA Social Report (Bilan Social)** from 2017 to 2023. It explores workforce composition, gender distribution, age structure, and the inclusion of employees with disabilities - all based on **public open data** from EDF.
 
 ---
 
@@ -103,7 +103,7 @@ All measures use **Qlik Set Analysis** to filter on chapter `§1.1.6` of the soc
 ### 2. Gender Distribution
 
 - **~70% men / ~30% women** consistently across all years
-- The gender gap is **structural and persistent** — it barely moves year over year
+- The gender gap is **structural and persistent** - it barely moves year over year
 - Women are more represented in **Cadre** (management) roles proportionally, suggesting better access to senior positions for women who do join the company
 
 > **Key insight:** The 70/30 split reflects the energy sector's traditionally male-dominated profile. However, the share of women has been **slowly increasing** over the period, which may indicate diversity efforts bearing fruit over the long term.
@@ -118,7 +118,7 @@ All measures use **Qlik Set Analysis** to filter on chapter `§1.1.6` of the soc
 | Maîtrise (Supervisory) | 28 614 |
 | Exécution (Operational) | 4 969 |
 
-> **Key insight:** EDF SA has a **top-heavy structure** — nearly half of all employees are classified as Cadres. This reflects the highly technical and qualified nature of nuclear and energy operations.
+> **Key insight:** EDF SA has a **top-heavy structure** - nearly half of all employees are classified as Cadres. This reflects the highly technical and qualified nature of nuclear and energy operations.
 
 ---
 
@@ -137,11 +137,11 @@ All measures use **Qlik Set Analysis** to filter on chapter `§1.1.6` of the soc
 
 ### 5. Disability Inclusion (RQTH)
 
-**EDF SA — Salariés en situation de handicap:**
+**EDF SA - Salariés en situation de handicap:**
 
 | Year | Count | YoY Change |
 |---|---|---|
-| 2017 | 2 320 | — |
+| 2017 | 2 320 | - |
 | 2018 | 2 375 | +2.4% |
 | 2019 | 2 390 | +0.6% |
 | 2020 | 2 505 | +4.8% |
@@ -149,11 +149,11 @@ All measures use **Qlik Set Analysis** to filter on chapter `§1.1.6` of the soc
 | 2022 | 2 602 | +2.4% |
 | 2023 | 2 753 | **+5.8%** |
 
-**EDF Group (Groupe EDF) — broader scope:**
+**EDF Group (Groupe EDF) - broader scope:**
 
 | Year | Count | % |
 |---|---|---|
-| 2012 | 4 519 | — |
+| 2012 | 4 519 | - |
 | 2017 | 5 279 | 3.40% |
 | 2019 | 5 682 | 3.40% |
 | 2021 | 6 454 | 3.86% |
@@ -165,7 +165,7 @@ All measures use **Qlik Set Analysis** to filter on chapter `§1.1.6` of the soc
 **By college (2022):**
 - Maîtrise: 1 435 (highest count)
 - Cadre: 825 (growing fastest)
-- Exécution: 342 (declining — fewer operational roles overall)
+- Exécution: 342 (declining - fewer operational roles overall)
 
 ---
 
@@ -189,10 +189,10 @@ The growing share of Cadre employees vs. Exécution reflects the company's skill
 
 ## 🗺️ Dashboards
 
-### Dashboard EDF — All years (2017–2023)
+### Dashboard EDF - All years (2017–2023)
 ![Dashboard EDF](DASHBOARD_EDF.PNG)
 
-### Dashboard EDF — 2022 only
+### Dashboard EDF - 2022 only
 ![Dashboard EDF 2022](dashboard_edf_2022.PNG)
 
 Both dashboards include:
@@ -207,15 +207,15 @@ Both dashboards include:
 
 ## 🔧 Tools & Technologies
 
-- **Qlik Sense** — data modeling, scripting (Set Analysis), dashboard creation
-- **Excel / CSV** — source data from EDF open data portal
-- **Open Data EDF** — [data.edf.fr](https://data.edf.fr)
+- **Qlik Sense** - data modeling, scripting (Set Analysis), dashboard creation
+- **Excel / CSV** - source data from EDF open data portal
+- **Open Data EDF** - [data.edf.fr](https://data.edf.fr)
 
 ---
 
 <!-- VERSION FRANÇAISE
 
-# 👷 Bilan Social EDF — Dashboard RH (Qlik Sense)
+# 👷 Bilan Social EDF - Dashboard RH (Qlik Sense)
 
 ## 📋 Présentation du projet
 
@@ -223,9 +223,9 @@ Ce projet est un tableau de bord de visualisation RH réalisé avec Qlik Sense, 
 
 ## 📁 Jeux de données utilisés
 
-- bilan-social-d-edf-sa-effectifs-et-repartition-par-age-statut-et-sexe.csv — Effectifs totaux EDF SA par âge, statut et sexe (2017–2023)
-- bilan-social-d-edf-sa-salaries-en-situation-de-handicap.csv — Salariés RQTH EDF SA (2017–2023)
-- insertion-des-travailleurs-en-situation-de-handicap-dans-le-groupe-edf.csv — Insertion handicap Groupe EDF (2012–2023)
+- bilan-social-d-edf-sa-effectifs-et-repartition-par-age-statut-et-sexe.csv - Effectifs totaux EDF SA par âge, statut et sexe (2017–2023)
+- bilan-social-d-edf-sa-salaries-en-situation-de-handicap.csv - Salariés RQTH EDF SA (2017–2023)
+- insertion-des-travailleurs-en-situation-de-handicap-dans-le-groupe-edf.csv - Insertion handicap Groupe EDF (2012–2023)
 
 Toutes les données proviennent du portail open data officiel d'EDF et du Bilan Social annuel obligatoire.
 
