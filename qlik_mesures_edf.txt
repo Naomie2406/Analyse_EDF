@@ -1,0 +1,49 @@
+========================================
+MESURES QLIK SENSE - BILAN SOCIAL EDF
+========================================
+
+1. Nombre de salariés total
+   sum({<[Chapitre du bilan social]={"§1.1.6"}, TypeIndicateur={'Total'}>}Valeur)
+   → Filtre sur le chapitre §1.1.6 (effectifs totaux) et le type 'Total' uniquement
+
+----------------------------------------
+
+2. Nombre de salarié
+   sum({<[Chapitre du bilan social]={"§1.1.6"}>}Valeur)
+   → Tous les salariés du chapitre §1.1.6 (sans filtre TypeIndicateur)
+
+----------------------------------------
+
+3. Nombre de femmes
+   sum({<[Chapitre du bilan social]={"§1.1.6"}, Genre={"Femme"}>}Valeur)
+   → Filtre sur le genre Femme uniquement
+
+----------------------------------------
+
+4. % de femme
+   sum({<[Chapitre du bilan social]={"§1.1.6"}, TypeIndicateur={'Total'}, Genre={"Femme"}>}Valeur)
+   /
+   sum({<[Chapitre du bilan social]={"§1.1.6"}, TypeIndicateur={'Total'}>}Valeur)
+   → Part des femmes dans l'effectif total
+
+----------------------------------------
+
+5. % d'homme
+   sum({<[Chapitre du bilan social]={"§1.1.6"}, TypeIndicateur={'Total'}, Genre={"Homme"}>}Valeur)
+   /
+   sum({<[Chapitre du bilan social]={"§1.1.6"}, TypeIndicateur={'Total'}>}Valeur)
+   → Part des hommes dans l'effectif total
+
+----------------------------------------
+
+6. % salariés en situation de handicap
+   sum({<TypeIndicateur={'Handicap'}>}Valeur)
+   /
+   sum({<[Chapitre du bilan social]={"§1.1.6"}, TypeIndicateur={'Total'}>}Valeur)
+   → Part des salariés RQTH par rapport à l'effectif total
+
+========================================
+NOTE : Toutes les mesures utilisent la syntaxe Set Analysis de Qlik
+pour filtrer précisément les données selon le chapitre du bilan social
+et le type d'indicateur (Total / Handicap / Extérieurs).
+========================================

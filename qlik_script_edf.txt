@@ -1,0 +1,95 @@
+///$tab Main
+SET ThousandSep=' ';
+SET DecimalSep=',';
+SET MoneyThousandSep=' ';
+SET MoneyDecimalSep=',';
+SET MoneyFormat='# ##0,00 €;-# ##0,00 €';
+SET TimeFormat='hh:mm:ss';
+SET DateFormat='DD/MM/YYYY';
+SET TimestampFormat='DD/MM/YYYY hh:mm:ss[.fff]';
+SET FirstWeekDay=0;
+SET BrokenWeeks=0;
+SET ReferenceDay=4;
+SET FirstMonthOfYear=1;
+SET CollationLocale='fr-FR';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='janv.;févr.;mars;avr.;mai;juin;juil.;août;sept.;oct.;nov.;déc.';
+SET LongMonthNames='janvier;février;mars;avril;mai;juin;juillet;août;septembre;octobre;novembre;décembre';
+SET DayNames='lun.;mar.;mer.;jeu.;ven.;sam.;dim.';
+SET LongDayNames='lundi;mardi;mercredi;jeudi;vendredi;samedi;dimanche';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+///$tab Section
+// =============================================
+// TABLE PRINCIPALE : Données Salariés Total EDF
+// =============================================
+Salaries:
+LOAD
+    Année,
+    "Perimètre juridique",
+    "Perimètre spatial",
+    Indicateur,
+    "Type de contrat",
+    Collège,
+    "Sous-catégorie collège",
+    Genre,
+    "Plage M3E",
+    Nationalité,
+    Ancienneté,
+    "Tranche d'âge",
+    replace(Valeur, ',', '.') * 1 as Valeur,
+    Unité,
+    "Chapitre du bilan social",
+    'Total' as TypeIndicateur
+FROM [lib://AttachedFiles/bilan-social-d-edf-sa-effectifs-et-repartition-par-age-statut-et-sexe.csv]
+(txt, utf8, embedded labels, delimiter is ';', msq);
+
+// =============================================
+// CONCATENATION : Salariés en situation de handicap
+// =============================================
+CONCATENATE (Salaries)
+LOAD
+    Année,
+    "Perimètre juridique",
+    "Perimètre spatial",
+    Indicateur,
+    '' as "Type de contrat",
+    Collège,
+    '' as "Sous-catégorie collège",
+    Genre,
+    '' as "Plage M3E",
+    '' as Nationalité,
+    '' as Ancienneté,
+    '' as "Tranche d'âge",
+    replace(Valeur, ',', '.') * 1 as Valeur,
+    Unité,
+    "Chapitre du bilan social",
+    'Handicap' as TypeIndicateur
+FROM [lib://AttachedFiles/bilan-social-d-edf-sa-salaries-en-situation-de-handicap (1).csv]
+(txt, utf8, embedded labels, delimiter is ';', msq);
+
+// =============================================
+// CONCATENATION : Travailleurs Extérieurs
+// =============================================
+CONCATENATE (Salaries)
+LOAD
+    Année,
+    "Perimètre juridique",
+    "Perimètre spatial",
+    Indicateur,
+    '' as "Type de contrat",
+    Collège,
+    '' as "Sous-catégorie collège",
+    Genre,
+    '' as "Plage M3E",
+    '' as Nationalité,
+    '' as Ancienneté,
+    '' as "Tranche d'âge",
+    replace(Valeur, ',', '.') * 1 as Valeur,
+    Unité,
+    "Chapitre du bilan social",
+    'Extérieurs' as TypeIndicateur
+FROM [lib://AttachedFiles/bilan-social-d-edf-sa-travailleurs-exterieurs.csv]
+(txt, utf8, embedded labels, delimiter is ';', msq);
+
+exit script;
