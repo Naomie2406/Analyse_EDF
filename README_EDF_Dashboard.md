@@ -209,7 +209,7 @@ Both dashboards include:
 
 - **Qlik Sense** - data modeling, scripting (Set Analysis), dashboard creation
 - **Excel / CSV** - source data from EDF open data portal
-- **Open Data EDF** - [data.edf.fr](https://data.edf.fr)
+- **Open Data EDF** - [opendata.edf.fr](https://opendata.edf.fr)
 
 ---
 
